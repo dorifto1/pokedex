@@ -50,17 +50,14 @@ searchlist = []
 def pokemonfinder(o):
     findcount = 0
     for i in range(len(data)):
-        if o in data[i]["name"]["english"]:
+        if o.lower() in data[i]["name"]["english"].lower():
             print(data[i]["name"]["english"])
             searchlist.append(data[i]["type"])
             findcount += 1
-            print([searchlist])
-        if findcount > 0:
-            print(f"Pokemon found: {findcount}")
-            break 
-        elif findcount == 0:
-            print("No pokemon were found.")
-            break
+    if findcount > 0:
+        print(f"Pokemon found: {findcount}")
+    else:
+        print("No pokemon were found.")
 pokemonfinder(o)
 
     
